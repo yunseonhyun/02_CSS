@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형에서 주로 사용하는 레이아웃 스타일</title>
+    <link rel="stylesheet" href="../css/04_반응형클래스명칭.css" />
+  </head>
+  <body>
+    <h1>반응형 클래스 명칭 살펴보기</h1>
+
+    <h3>단위 관련</h3>
+    <pre>
+        px(픽셀) 고정된 크기의 단위
+        %(퍼센트) 부모 요소에 비례한 상대 단위
+                기기 크기에 따라 자동으로 웹사이트 내부의 태그요소들 크기 조정
+        em / rem 텍스트 크기 기준의 상대 단위
+        vw / vh 뷰포트 너비 높이의 상대단위
+                vh의 경우 웹사이트에서 세로 크기 단위로 많이 사용       
+    </pre>
+
+    <h3>레이아웃 관련</h3>
+    <pre>
+        Flexbox 1차원 방향으로 정렬할 때 사용하는 레이아웃
+        Grid    2차원 방향으로 정렬할 때 사용하는 레이아웃
+        Container 콘텐츠를 감싸는 부모 요소로 일반적인 고정 폭 또는 최대폭을 지정
+        Column / Row 그리스 시스템에서 열과 행을 의미하며 여러 요소를 정렬할 때 사용
+            Column의 경우 col로 주로 사용
+                한 줄 기준으로 12개의 col이 존재
+                    col-6라고 작성할 경우 절반정도 차지함을 의미하며
+            Row   의 경우 ROW로 주로 사용
+
+        가로 정렬 justify-content : center
+        세로 정렬 align-items     : center
+
+        마진 패딩
+        Margin  m-숫자값 영어 사용
+                m-1 가장 작은 단위의 마진 m-5는 가장 큰 단위의 마진
+        Paddign p-5 가장 그게 테두리안에서 너비를 제공
+        border Padding Margin border-radius 1~5의 숫자로 표현가능
+    </pre>
+  </body>
+</html>

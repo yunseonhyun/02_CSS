@@ -1,0 +1,99 @@
+/*
+        1.title을 이용해서
+        배경색 #ff7043
+        글자색상 white
+        글자크기 28px
+        패딩 상하좌우 20px
+        여백 0px
+
+        2. .nav 이용해서
+        margin 상하 좌우
+        margin 10px auto
+
+        2. a태그
+        margin 0 15px
+        밑줄제거 : none
+        글자 굵기 굵게
+        글자색상 d84315 설정
+      */
+body {
+  margin: 0px;
+}
+.title {
+  background-color: #ff7043;
+  color: white;
+  font-size: 28px;
+  padding: 20px;
+  margin: 0px;
+}
+
+.nav {
+  margin: 10px auto;
+}
+/*.nav클래스 내부에 존재하는 a 태그만 스타일 적용*/
+. nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #d84315;
+}
+.box {
+  background-color: #ffe0b2;
+  padding: 20px;
+  border: 5px solid #ff7043; /*테두리*/
+  margin: 20px; /*여백*/
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pizza-list {
+  /*피자리스트 div 내부에
+        피자 아이템이라는 div가 여러가지 있음
+        div들을 정렬할 때는 맨 바깥에 
+        display: flex; 작성해서 가로로 정렬하는 방법
+        */
+  display: flex;
+  justify-content: center;
+}
+.pizza-item {
+  /*가로 크기 250px
+        배경색상 화이트
+        패딩 상우하좌 15px
+        실선 3px #ffa726
+        모서리 둥글기 10px
+        }*/
+
+  width: 250px;
+  background-color: white;
+  padding: 15px;
+  border: 3px solid #ffa726;
+  border-radius: 10px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+.footer {
+  background-color: #ffccbc;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+
+  position: fixed; /*위치 설정*/
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.pizza-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+  z-index: 5;
+}

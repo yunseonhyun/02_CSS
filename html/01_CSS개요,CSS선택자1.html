@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 개요, CSS 선택자</title>
+    <style>
+      /*css (범위) 주석*/
+      /* style 태그 : css를 작성하기 위한 태그*/
+      /* 태그 선택자*/
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS(Cascading Style Sheets)</h1>
+    <pre>
+        마크업 언어(HTML)가 실제로 화면에 표시되는 방법을 기술하는 언어
+        (모양, 색상, 크기, 배경이미지, 움직임, ...)
+
+        하나의 요소에 여러 CSS코드를 겹쳐서 원하는 스타일을 만들어냄
+
+        W3C에서 CSS를 웹 표준으로 지정함
+    </pre>
+
+    <hr />
+    <hr />
+
+    <h1 id="test">CSS 선택자(CSS Selector)</h1>
+
+    <pre>
+        현재 문서 내에서 특정 요소를 선택하는 문자 또는 문자영(기호)
+
+        *요소(Element) : 시작태그 + 속성 + 내용 + 종료태그
+
+    </pre>
+
+    <ul>
+      ** css코드를 작성하는 방법**
+      <li>head 태그 style 태그를 작성한 후 내부에 css코드 작성</li>
+      <li>원하는 요소에 직접 style 속성을 이용해서 css 코드 작성</li>
+      <li>
+        외부 .css 파일을 생성해서 연결하는 방법<small
+          >(현업에서 많이 사용)</small></li>
+      </li>
+    </ul>
+
+    <!-- head 태그 내부에 style 태그를 작성하는 것이 개발자간의 규칙!!
+     css 익히기 위해서 body 태그 내부에 사용할 것
+     -->
+     <style>
+        strong {
+            font-size: 20px; /*폰트 크기 조정 보통 p 태그 기준 16px 기본값*/
+            font-family: "궁서체";
+            /*글자색*/
+            color:steelblue;
+        }
+        code{
+            /*배경색*/
+            background-color: lightcoral;
+            /*inline 형식을 block(한 줄 모두 차지하는 형식) 형식으로 변경*/
+            display: block;
+
+            /*글자 두껍게*/
+            font-weight: bold;
+        }
+     </style>
+    <h3>태그 선택자</h3>
+    <pre>
+        - 현재 문서 내에 특정 태그를 모두 찾아 선택하는 선택자
+
+        <strong>[작성법]</strong>
+        <code>
+            태그명{ css 코드;}
+        </code>
+    </pre>
+
+    <hr>
+
+    <h3>id(#) 선택자</h3>
+    <pre>
+        HTML 문서 내에서 
+        id가 일치하는 요소를 선택하는 선택자
+    </pre>
+    <strong>[작성법]</strong>
+    <code>
+        #id속성값{css 코드; }
+    </code>
+
+    <style>
+        /*id{#} 선택자*/
+        /*
+        HTMl 문서 내에서 id가 중복되는 경우가 없게 해야한다.
+        id는 보통 css가 아니라 javascript 기능과 연관지어서 사용
+        보통은 class 내부에 클래스 명칭을 작성하고 명칭을 이용해서 css 작성
+        class보다 더 우선순위에 있어야하고 더 급한 경우에만 id로 css 스타일 작성*/
+
+        #li1{
+            background-color: green;
+        }
+
+        #li2{
+            background-color: yellow;
+        }
+        #li3{
+            background-color: orange;
+        }
+    </style>
+    <ol>
+        <li id="li1">id 선택자 테스트1</li>
+        <li id="li2">id 선택자 테스트2</li>
+        <li id="li3">id 선택자 테스트3</li>
+    </ol>
+
+    <hr>
+    <h3>class(.) 선택자</h3>
+
+    <pre>
+        - html 문서 내에서 class 속성 값이 일치하는 모든 요소를 
+        선택하는 선택자
+        <strong>[작성법]</strong>
+        <code>
+            .class속성값{css 코드;}
+        </code>
+
+        ***요소에 css를 적용하기 위한 선택자를 작성할 때 
+        id 선택자보다 class 선택자를 이용하는 것이 좋다!!***
+
+        (왜 그런 것인가?! id속성 자체가 css보다 js에서 많이 사용되기 때문)
+    </pre>
+    <style>
+        /*class(.) 선택자*/
+        .test1 {
+            background-color: black;
+            color: white;
+        }
+        .test999 {
+            background-color: pink;
+        }
+    </style>
+    <p class="test1">class 선택자 테스트</p>
+    <p class="test999">class 선택자 테스트</p>
+    <p class="test1">class 선택자 테스트</p>
+    <p class="test999">class 선택자 테스트</p>
+    <p class="test1">class 선택자 테스트</p>
+    <p class="test999">class 선택자 테스트</p>
+  
+    <!-- 
+    test-1 스타일 배경색상 orange
+    test-2 글자크기 30px
+     -->
+    <style>
+        /*class(.) 선택자*/
+        .test-1 {
+            background-color: orange;
+        }
+
+        .test-2 {
+            font-size: 30px;
+            color: green;
+            background-color: gold;
+        }
+        .aaa {
+            background-color: skyblue;
+        }
+    </style>
+    <ul>
+        <li class="test-1">클래스 선택자 테스트1</li>
+        <li class="test-2">클래스 선택자 테스트2</li>
+        <li class="test-1">클래스 선택자 테스트3</li>
+        <li class="test-2">클래스 선택자 테스트4</li>
+        <li class="test-1">클래스 선택자 테스트5</li>
+
+        <li class="aaa">클래스 선택자 테스트6</li>
+
+        <!--클래스에서 여러 스타일을 적용하는 방법-->
+        <!-- 
+         클래스에서 여러 스타일 적용가능
+         하지만 여러 클래스 작성 시 class 내부에서 속성 값을 작성하는 순거는 의미 없음
+         그런데 style 태그 내에서 작성하는 css 코드 순서는 의미가 다름
+         클래스 내에 작성한 속성 값 중 중복되는 속성에서 가장 마지막에 작성한 스타일이 적용
+         -->
+
+        <li class="aaa test-1">클래스 선택자 테스트 7</li>
+        <li class="test-2 aaa">클래스 선택자 테스트 8</li>
+    </ul>
+
+    <hr>
+    <h3>모든 요소 선택자(*, asterRisk)</h3>
+    <style>
+        /*모든 요소 선택자(*)*/
+        * {
+            /* 모든 텍스트에 밑줄 긋기*/
+            text-decoration: underline;
+            /*모든 요소의 폰트(글꼴) 지정 == 기본 폰트 지정*/
+            font-family: "굴림";
+        }
+
+
+        
+    </style>
+    <pre>
+        단독 사용 시 : 문서에 존재하는 모든 요소 선택자
+        다른 선택자와 혼용 사용 시 : 선택된 요소의 모든 자식/후손/형제까지 모두 적용
+        
+        css 적용 우선순위
+        1. 선택자 범위가 가장 작은 선택자가 우선순위를 갖는다
+        (!important > 인라인스타일 > 아이디 > 클래스 > 태그 > 모든 요소)
+        2. 태그 내에서 같은 속성값이 있을 경우 가장 마지막에 작성된 클래스 내에 존재하는 css 속성값이 적용
+
+    
+    
+    </pre>
+
+</body>
+
+  
+</html>

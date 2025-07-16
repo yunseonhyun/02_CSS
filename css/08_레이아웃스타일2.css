@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.title {
+  background-color: steelblue;
+  color: white;
+  padding: 100px 20px 30px;
+
+  /*
+        요소가 화면을 벗어나면 지정된 위치에 고정
+        화면 스크롤을 내릴 경우 title 내부에 작성된 글자는 보이지 않는 것이 맞음
+        특정 요소를 화면에서 벗어나더라도 고정하길 원한다면 position 기능 이용할 수 있음
+        top 위 위치를 기준으로 -70의 값을 준 것은
+        고정된 요소의 크기를 -70만큼 줄여서 보여질 것을 설정
+        */
+
+  position: sticky;
+  top: -70px;
+}
+
+div {
+  border: 1px solid black;
+}
+
+/*감싸는 요소(태그)의 기준점*/
+.container-1 {
+  width: 340px;
+  height: 304px;
+  border: 2px dashed red;
+  margin: 30px;
+  position: relative;
+}
+
+.first {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  position: absolute;
+  z-index: 1;
+}
+
+.second {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  position: absolute;
+  /*기준이 되는 container-1 요소 에서 
+        왼쪽 벽으로부터 50px만큼 떨어진 위치에 배치
+        위쪽 벽으로부터 50px만큼 떨어진 위치 배치*/
+  left: 50px;
+  top: 50px;
+  z-index: 2;
+}
+.third {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  position: absolute;
+  /*container-1 기준 div 태그 요소로부터
+        오른쪽 벽에서 100px 정도 떨어지고
+        아래쪽 벽에서 100px떨어진 위치에 thir div 배치*/
+  right: 100px;
+  bottom: 100px;
+  z-index: 3;
+}
+.container-2 {
+  width: 486px;
+  height: 272px;
+  position: relative; /*기준요소 위치 설정*/
+}
+
+.center {
+  width: 50px;
+  height: 50px;
+  background-color: hotpink;
+
+  /*테두리를 가장 둥글게 만들어서 원형 형태 유지*/
+
+  border-radius: 50%;
+
+  /*다른 요소와의 간격을 자동으로 설정 -> 가로에서 가운데설정
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        container-2 상 하 우 좌 면에 여백을 하나도 주지않고 딱 붙어있겠다는 의미
+        내부 요소(태그)는 위치설정을 할 수 없으르모 가장 기본인 왼쪽위에 딱 붙는 정렬
+        
+        margin: auto;
+        가운데 정령을 할 수 있는 핵심
+        top-bottom left-right가 모두 공평하게 설정되어 있고,
+        설정에서 여백을 자동으로 조정할 수 있도록 속성을 넣어주면
+        자동으로 남은 공간을 양쪽에 똑같이 분배해서 요소를 
+        정중앙에 위치시킴*/
+  margin: auto;
+
+  /* margin: auto; + position: absolue + top: 0 + bottom: 0 + right: 0 + left: 0
+        가로, 세로, 모두 중앙 정렬을 하는 고전적인 CSS 가운데 정렬 기법*/
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.fixed-area {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+
+  text-align: center;
+
+  line-height: 35px; /*장평설정 : 세로에서 폭 설정*/
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  user-select: none; /*사용자가 드래그를 하지 못하도록 방지*/
+}
