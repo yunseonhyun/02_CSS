@@ -44,17 +44,94 @@
         </div>
       </nav>
 
-      <style>
-        div
+      >
+      <!--  div
         {text-align: center;
         텍스트 가운데 정렬
-        }
-      </style>
+        margin-top: 50px;
+        m      t     -5
+        margin-bottom: 10px
+        m       b      -10
+        }       
+    -->
 
       <!--본문위치-->
       <div class="text-center mt-5">
         <h2>우리의 서비스</h2>
         <p>다양한 분야에서 전문적인 서비스를 제공합니다.</p>
+      </div>
+      <style>
+        .box {
+          background-color: lightblue;
+        }
+      </style>
+      <!--
+        row 한 줄에서
+        col 한 행을 사용하면
+        모든 박스가 동일한 너비로 한 줄 배치
+        기기 가로 사이즈가 줄어서 더이상 
+        한 줄에 담을 수 없을 때까지
+      -->
+      <div class="row">
+        <div class="col-6 box">박스1</div>
+        <div class="col-3 box">박스2</div>
+        <div class="col-3 box">박스3</div>
+        <div class="col box">박스4</div>
+        <div class="col box">박스5</div>
+        <div class="col box">박스6</div>
+        <div class="col box">박스1</div>
+        <div class="col box">박스2</div>
+        <div class="col box">박스3</div>
+        <div class="col box">박스4</div>
+        <div class="col box">박스5</div>
+        <div class="col box">박스6</div>
+      </div>
+
+      <!-- 아래에 row class를 만들고
+        col-2를 이용해서 한줄에 <div>가 
+            모두 꽉차도록 div 만들어주기-->
+
+      <div class="row">
+        <div class="col-2">박스</div>
+        <div class="col-2">박스</div>
+        <div class="col-2">박스</div>
+        <div class="col-2">박스</div>
+        <div class="col-2">박스</div>
+        <div class="col-2">박스</div>
+      </div>
+
+      <!-- 아래에 row 클래스 만들고
+       col-3 꽉차게 만들기
+       <style> 태그를 이용해서
+        box1 클래스 명칭 만들고
+        box1 디자인 속성 적용하기
+        적용할 디자인 속성 : 
+        1. 배경색 : lightpink(홀수) lightblue(짝수)
+        2, 실선 1px solid black
+        3. 모서리 둥글기 10px
+        5.box-shadow 이용해서 오른쪽으로 5칸 아래로 8칸 설정하고 색상 지정 -> rgba(0,0,0,0.4,0.8)-->
+
+      <style>
+        .box1 {
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 5px 8px 0.4px rgba(0, 0, 0, 0.8);
+        }
+
+        .box1:nth-child(odd) {
+          background-color: lightpink;
+        }
+
+        .box1:nth-child(even) {
+          background-color: blanchedalmond;
+        }
+      </style>
+
+      <div class="row">
+        <div class="col-3 box1">박스</div>
+        <div class="col-3 box1">박스</div>
+        <div class="col-3 box1">박스</div>
+        <div class="col-3 box1">박스</div>
       </div>
     </div>
 
