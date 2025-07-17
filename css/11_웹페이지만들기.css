@@ -68,8 +68,10 @@ align-items:center
 
 .banner {
   display: block;
-  background-image: url("../images/banner.png");
-  background-size: cover;
+  background-image: url("../images/banner1.png");
+  background-size: auto 145%;
+  background-repeat: no-repeat;
+  /*contain -> 이미지 사이즈가 기기 너비만큼 복제*/
   background-position: center;
   width: 100%;
   height: 100%;
@@ -79,8 +81,30 @@ align-items:center
 
 .banner-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   color: #333;
   text-align: center;
+}
+.banner-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+
+  /*
+  box-shadow나 text-shadow나 동일한 특성을 지님
+  box-shadow  담겨진 테두리 음영을 줄 때 사용
+  text-shadow 글자 테두리 음영을 줄 때 사용
+
+
+  색상
+  rgba(225=빨간색, 255-초록색, 255=파란색, 불투명한 정도는 0.1로 갈수록 투명해져서 그림자가 안보임
+                                                        0.9로 갈수록 불투명(선명)해져서 그림자가 뚜렷)
+  */
+  /*       오른쪽으로 이동   아해쪽으로 얼마나 이동할 것인가      그림자 흐린정도     80% 불투명한 흰색 
+    text-shadow: 2px                    2px                         4px        rgba(255, 255, 255, 0.8);
+  
+           왼쪽으로 이동    위쪽으로 이동     선명하게            흰색 
+    text-shadow: -20px          2px            0px        rgba(255, 255, 255, 0.9);
+  */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
