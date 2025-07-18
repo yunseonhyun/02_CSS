@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: white;
   padding: 30px;
@@ -87,4 +87,86 @@ padding 상하10 좌우 20
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+}
+
+.item {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+.item:hover {
+  border-color: #ff6b6b;
+}
+.item h3 {
+  color: #333;
+  font-size: 1.5rem; /*1rem = 16px, 1.5rem = 24px, 2px = 32px
+                        rem = 화면 너비에서 글꼴의 크기에 따라 상대적인 크기
+                        기본값이 16px이지만 컴퓨터 설정에서 기본 글자 크기를 20px로
+                        키우면 1rem은 20px를 기본으로 사용
+                        px  = 절대적인 크기*/
+}
+.item p {
+  text-align: left;
+  color: #666;
+  margin: 0;
+}
+
+/*태블릿 반응형 768px*/
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .nav {
+    flex-wrap: 32;
+    gap: 10px;
+  }
+
+  .nav a {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/*모바일 반응형 480px*/
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav a {
+    width: 80%;
+    text-align: center;
+  }
+
+  .alert {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
 }
