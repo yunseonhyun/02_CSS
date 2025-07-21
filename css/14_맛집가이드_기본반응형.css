@@ -231,6 +231,142 @@ a 태그를 마우스로 클릭하면 : active
   cursor: pointer;
 }
 
+/* 회원가입 버튼 */
+.sign-container button:first-child {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.sign-container button:first-child:hover {
+  background-color: #ff5252;
+}
+
+/* 초기화 버튼 */
+.sign-container button:last-child {
+  background-color: #6c757d;
+  color: white;
+}
+
+.sign-container button:last-child:hover {
+  background-color: #5a6268;
+}
+
+/***** 맛집가이드 각 메뉴 상세페이지 스타일 *****/
+.menu0detail {
+  max-width: 800px; /*0부터 800px 가로 너비 제한*/
+  margin: 0 auto; /*상하 0 좌우 자동 여백 주기*/
+  padding: 20px;
+}
+
+.menu-detail .menu-img {
+  /*
+  배경색 실선 그라디언트
+  135도 #fff8e1 0%시작
+  #ffe0b2 100%로 준다
+
+  패딩 상하좌우 30px
+  모서리 테두리 15px
+  실선 2px solid #ffcc02
+  여백 아래 30px
+  */
+
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #ffcc02;
+  margin-bottom: 30px;
+}
+
+.menu-detail .menu-img h3 {
+  color: #d54315;
+  font-size: 2rem; /* 기본 글자 크기가 16px라면 1rem은 16px이고 2rem은 32px이다. */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.price {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 25px 0;
+  border: 2px solid #ff6b6b;
+}
+
+.price h5 {
+  font-size: 30px;
+  color: #d32f3f;
+}
+
+.price p {
+  font-size: 18px;
+}
+
+.재료리스트 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.재료아이템 {
+  background-color: #4caf50;
+  /*
+  글자색 흰색
+  패딩 상하 8px 16px
+  모서리 20px
+  박스 그림자 오른쪽 이동x 아래로 2px이동, 번짐효과 4px rgba(검정기준 0.2만큼 불투명하게 설정))
+  */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.order-list {
+  display: grid;
+  /*
+  그리드 템플릿 컬럼즈를 이용해서 반복 3개씩 정렬 반복 1fr 간격만큼 설정
+  갭사이즈 20
+  */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.order-item {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.order-item:hover {
+  border-color: #ff6b6b;
+  box-shadow: 0, 4px 8px rgba(0, 0, 0, 0.3);
+}
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
 /*태블릿 반응형 768px*/
 @media (max-width: 768px) {
   .container {
@@ -313,24 +449,4 @@ a 태그를 마우스로 클릭하면 : active
 .btn-group {
   text-align: center;
   margin-top: 20px;
-}
-
-/* 회원가입 버튼 */
-.sign-container button:first-child {
-  background-color: #ff6b6b;
-  color: white;
-}
-
-.sign-container button:first-child:hover {
-  background-color: #ff5252;
-}
-
-/* 초기화 버튼 */
-.sign-container button:last-child {
-  background-color: #6c757d;
-  color: white;
-}
-
-.sign-container button:last-child:hover {
-  background-color: #5a6268;
 }
