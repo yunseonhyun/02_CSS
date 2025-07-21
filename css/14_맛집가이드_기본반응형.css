@@ -31,6 +31,11 @@ p {
   margin-bottom: 30px;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
 /*
 클래스 nav
 display 이용해서 한줄 정렬
@@ -121,6 +126,44 @@ padding 상하10 좌우 20
   text-align: left;
   color: #666;
   margin: 0;
+}
+
+/*클래스 명칭이 item이고 item 클래스 명칭 내부에 존재하는 a 태그를
+모두 꾸며주겠다!!!*/
+.item a {
+  /* 
+  a태그는 인라인 요소이기 때문에 text-align이 적용 힘듬
+  inline-block : a 태그를 블록 요소처럼 만들어서 패딩, 마진 등이 제대로 적용되도록 함
+  float : right 요소를 오른쪽으로 띄움
+        ->inline이 아니라 block요소 처리가 됨
+  
+  display: inline-block; float: right;
+  -> 위의 경우에는 inline-block이 무시되고, block 형태로 변경되면서 
+    태그 내부에 있는 요소 값이 오른쪽 정렬
+ 
+  display: block; float: right;
+  -> float 속성 내부에는 display: block이 자동으로 포함되어 있으므로
+     display 생략 가능
+
+  float: right;
+  -> display: block이 포함되어 있으므로 display가 없어도 됨!!!
+  
+  */
+
+  float: right;
+  background-color: orange;
+  padding: 8px 16px;
+  border-radius: 15px;
+}
+/*
+a 태그 위에 마우스를 올리면 : hover
+a 태그를 마우스로 클릭하면 : active
+*/
+.item a:hover {
+  background-color: darkorange;
+}
+.item a:active {
+  background-color: lightblue;
 }
 
 /***** 회원가입 CSS *****/
