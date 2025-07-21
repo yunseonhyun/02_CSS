@@ -52,6 +52,18 @@ padding 상하10 좌우 20
 글래스 nav 내부에 있는 a 태그 위 마우스 올라오면
 배경색 ff5252 변경*/
 
+.hamburger {
+  /* display: none;  평소에는 숨기기
+        -> 460때 설정*/
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: none;
+}
+
 .nav {
   display: flex;
   justify-content: center;
@@ -307,6 +319,7 @@ a 태그를 마우스로 클릭하면 : active
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .재료아이템 {
@@ -344,6 +357,18 @@ a 태그를 마우스로 클릭하면 : active
   border-color: #ff6b6b;
   box-shadow: 0, 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.border-item strong {
+  display: block;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.order-item p {
+  color: #ff6b6b;
+  font-size: 1.5rem; /* 24px */
+}
+
 /*
 
 
@@ -404,6 +429,11 @@ a 태그를 마우스로 클릭하면 : active
     width: 100%;
     margin: 10px 0;
   }
+
+  .order-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 
 /*모바일 반응형 480px*/
@@ -418,8 +448,16 @@ a 태그를 마우스로 클릭하면 : active
   }
 
   h1 {
-    font-size: 29px;
+    font-size: 20px;
   }
+
+  .hamburger {
+    display: block;
+  }
+  /* 
+네비게이션을 모바일에서 확인했을 때 토글 형태로 확인할 수 있다.
+
+*/
 
   .nav {
     flex-direction: column;
@@ -443,6 +481,14 @@ a 태그를 마우스로 클릭하면 : active
 
   .sign-container button {
     padding: 15px;
+  }
+  .재료리스트 {
+    gap: 8px;
+  }
+
+  .재료아이템 {
+    padding: 6px 12px;
+    font-size: 10px;
   }
 }
 
