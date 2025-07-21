@@ -67,10 +67,42 @@
       </div>
     </div>
     <script>
-      const hamburger = document.querySelector(".hamburger");
+      /*
+      html에서 맨 위에 <!DOCTYPE html> 존재함 DOCTYPE =DOCumnetType = 문서타입
+      document 문서에서 선택하겠다. 
+      querySelector = css 선택자를 이용해서 css 명칭으로 들어간 이름을 선택! 
+          .hamburger = 클래스 이름이 hamburger인 태그를 선택하겠다
+          #hamburger = 아이디 이름이 hamburger인 태그를 선택하겠다
+              query = 질문, 요청하다, 조회하다
+              Selector = 선택하다
+       */
+      const 햄버거 = document.querySelector(".hamburger");
+      //        이 페이지 안에서  조회하겠어 선택해서 .hamburger라는 class가 들어간 태그를
+      // hambuger라는 이름으로 자바스크립트에서
+      // HTML 내에 개발자나 소비자가 작성한 값을 가져와서 저장
       const nav = document.querySelector(".nav");
 
-      hamburger.addEventListener("click", () => {
+      /*
+      const nav = document   .        query      Selector             (".nav");
+                  이 문서   내에서   조회하겠어    내가선택한  .nav라는 이름이 들어간 class 태그를
+
+                    add     Event   Listenter
+                  추가하다   동작   듣고 감지하다
+              
+                  "click" 클릭이라는 이벤트가 발생했을 때
+                  
+                  nav.classList.toggle("show");
+                  nav이라는 요소에(태그 내부에 있는 값까지 포함)
+                  clssList = 클래스 목록중에서
+                  toggle - 있으면 제거, 없으면 추가
+
+                  자바스크립트 내에서 자주 사용하는 이벤트는
+                  자바스크립트 개발자 자체가 이런 단어가 들어왔을 때는
+                  컴퓨터 내에서 이런 움직임이 발생했을 것이다.
+                  라는 개념을 정의
+                  click change submit show  
+      */
+      햄버거.addEventListener("click", () => {
         nav.classList.toggle("show");
       });
     </script>
