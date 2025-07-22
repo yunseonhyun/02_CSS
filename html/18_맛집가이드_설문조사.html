@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>맛집 가이드 - 설문조사</title>
+    <link rel="stylesheet" href="../css/14_맛집가이드_기본반응형.css" />
+    <link rel="stylesheet" href="../css/18_맛집가이드_설문조사.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>맛집 가이드 - 설문조사</h1>
+
+      <button class="hamburger">&#9776;</button>
+
+      <div class="nav">
+        <a href="14_맛집가이드_기본반응형.html" class="move-link">홈</a>
+        <a href="#양식">양식</a>
+        <a href="#한식">한식</a>
+        <a href="#일식">일식</a>
+        <a href="#중식">중식</a>
+        <a href="#디저트">디저트</a>
+        <a href="15_맛집가이드_회원가입.html" class="move-link">회원가입</a>
+      </div>
+
+      <!-- action form 내부에 작성된 값을 결과로 전달 
+       전달할 html이 존재하지 않는다면 #으로 표기-->
+      <form action="#">
+            <!-- 기본정보 -->
+            <fieldset>
+                <legend>기본 정보</legend>
+
+                <label>
+                이름 :
+                <!-- 
+                class = css 스타일을 꾸며줄때 사용하는 명칭
+                id = 자바스크립트 기능 연결할 때 사용하는 명칭 
+                name = 소비자가 작성한 값을 action으로 전달할 html 내부에 
+                        전달할 때 사용하는 명칭
+                required = 작성하지 않으면 폼 제출 못하게 막아주는 필수 항목 
+                readonly = 작성못하게 막고, 오직 읽기모드 상대
+                            -> sns 연결해서 회원가입 하기
+                                -> 가져온 이메일을 수정하지 못하도록 방지      
+                    -->
+                <input id="username" name="username" required />
+                </label>
+
+                <label
+                >이메일 :
+                <input type="email" id="useremail" name="useremail" required />
+                </label>
+
+                <label>
+                나이 :
+                <input
+                    type="range"
+                    id="userage"
+                    name="userage"
+                    min="10"
+                    max="100"
+                    value="25"
+                />
+                </label>
+
+                <label>
+                전화번호 :
+                <!--
+                    input의 기본 타입은 text이다.
+                    type으로 number나 range를 작성해줄 경우에는
+                        min 최소 숫자값 max 최대 숫자값을 지정할 수 있고, 
+                        value를 설정해서 기본 숫자값을 설정할 수 있다.
+                    placeholder = input 내부에 어떠한 값을 작성해주어야 하는지
+                                알려주는 알림값
+
+                    input의 경우는 주관식처럼 소비자가 작성한 value 값을 가져오기 때문에 
+                            기본적으로 value를 작성하지 않지만 
+
+                            checkbox나 radio처럼 객관식으로 개발자가 지정한 범위 내에서
+                            소비자가 값을 설정할 경우에는 value값을 개발자가 지정해주어야한다.
+                -->
+                <input
+                    id="userphone"
+                    name="userphone"
+                    placeholder="010- 형식으로 전화번호 입력"
+                />
+                </label>
+            </fieldset>
+
+            
+                <legend>음식 선호도</legend>
+                <p>좋아하는 음식 종류 (복수 선택 가능 : )</p>
+                <!--                       value = 소비자가 어떤 값을 선택했는지 개발자에게 전달-->
+                <label>
+                <input type="checkbox" id="korean" name="food" value="korean" />
+                한식
+                </label>
+
+                <label>
+                <input type="checkbox" id="japanese" name="food" value="japanese" />
+                일식
+                </label>
+
+                <label>
+                <input type="checkbox" id="western" name="food" value="western" />
+                양식
+                </label>
+
+                <label>
+                <input type="checkbox" id="chinese" name="food" value="chinese" />
+                중식
+                </label>
+
+                <p>맛집 방문 빈도 (중복 선택 불가 :)</p>
+                <label>
+                    <input type="radio" id="daily" name="frequency" value="daily">
+                    매일
+                </label>
+                
+                <label>
+                    <input type="radio" id="weekly" name="frequency" value="weekly">
+                    주 1 ~ 2 회
+                </label>
+
+            </fieldset>
+            <!-- 
+            맛집 이미지 html 코드를 작성할 때 
+            어디서부터 어디까지 어떤 코드를 작성했는지 표기
+            -->
+            <fieldset>
+                <legend>맛집 사진 1탄</legend>
+                <!-- 현재 컴퓨터에서 이미지 파일 가져오기
+                alt 시각적으로 보이지 않는 분들을 유ㅣ해서 이미지가 무엇인지
+                알려주는 설명, 이미지가 보이지 않을 때
+                어떤 이미지의 위치인지 알려줌-->
+                <img 
+                style="width: 200px;"
+                src="../images/pizza/감자피자.png" alt="감자피자">
+                <p>위 음식이 맛있어 보이나요?</p>
+                <label>
+                    <input type="radio" id="yes" name="looks1" value="yes">
+                    네, 맛있어 보여요.
+                </label>
+                <label>
+                    <input type="radio" id="no" name="looks1" value="no">
+                    아니요, 별로에요
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>맛집 사진 2탄</legend>
+                <img src="data:image/webp;base64,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" alt="비빔밥">
+                <p>위 음식 사진이 맛있어 보이나요?</p>
+
+                <label>
+                    <input type="radio" id="yes" name="looks1" value="yes">
+                    네, 맛있어 보여요.
+                </label>
+                <label>
+                    <input type="radio" id="no" name="looks1" value="no">
+                    아니요, 별로에요
+                </label>
+
+            </fieldset>
+
+            <!-- 유튜브 영상 -->
+            <fieldset>
+                <legend>맛집 소개 영상</legend>
+                <p>유명한 맛집 리뷰 영상을 시청해보세요 :</p>
+                
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wFHuxj2xfeE?si=UVc5ECOA5tZ3Kf33" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+                
+                <label>
+                    <input type="radio" id="good" name="ytv1" value="good">
+                    도움됨👍
+                </label>
+                
+                <label>
+                    <input type="radio" id="bad" name="ytv1" value="vad">
+                    도움안됨👎
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>맛집 위치</legend>
+                <p>서울 맛집 밀집 지영 - 종각역 주변 : </p>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.17729777195!2d126.98619923288769!3d37.56070593173044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2fa7fb9dbfd%3A0xf60d1dcde0189fa3!2z66qF64-Z!5e0!3m2!1sko!2skr!4v1753150165034!5m2!1sko!2skr" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <p>이 지역에 가본적이 있나요?(방문한 사람만 체크)</p>
+                <!--
+                radio는 반드시 둘 중 하나를 선택
+                checkbox는 모두 선택을 안해도 되고, 부분 선택 가능, 중복 선택 가능
+                -->
+                <label>
+                    <input type="checkbox" id="visited" name="visited" value="visited">
+                    네, 가본 적 있어요. 
+                </label>
+            </fieldset>
+            <!-- 제출버튼 -->
+            <button type="submit">제출하기</button>
+            <button type="reset">다시 작성하기</button>
+            <button type="button">설명 가이드</button>
+        </form>
+    </div>
+  </body>
+</html>
