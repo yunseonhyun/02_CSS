@@ -97,10 +97,11 @@ accent-color : #ff6b6b로 변경
   background-color: #fff8f8;
 }
 
-.choice-field > label > input:checked {
+.choice-field > label > input {
   /*
     accent-color : 체크된 체크박스 내부 색상을 변경
-    체크된 체크표시의 색상을 변경 
+    체크된 체크표시의 색상을 변경할 경우
+    fontasome이나 외부에서 작성된 svg 폰트, icon을 사용해서
     
   filter: invert(1);
   기존에 input에서 주었던 accent 색상이나
@@ -108,6 +109,11 @@ accent-color : #ff6b6b로 변경
   보통 light모드 테마 -> dark 모드 테마로 변경하거나
   색양용 테마로 변경할 때 주로 사용*/
   accent-color: #ff6b6b;
+  color: white;
+}
+
+.choice-field > label > input:checked + .choice-field > label > input:checked {
+  content: "ㅎ";
 }
 
 img {
